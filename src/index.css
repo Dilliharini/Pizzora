@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #11100f;
+  --color-bg-secondary: #1b1917;
+  --color-card: #24211e;
+  --color-accent: #e94b32;
+  --color-accent-warm: #f4a340;
+  --color-cream: #f8f1e8;
+  --color-muted: #a69d92;
+  --color-line: rgba(255, 255, 255, 0.1);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  --animate-float-slow: float 7s ease-in-out infinite;
+  --animate-float-med: float 5.5s ease-in-out infinite;
+  --animate-spin-slow: spin 28s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-16px) rotate(3deg); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #11100f; }
+::-webkit-scrollbar-thumb { background: #3a352f; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #4d463f; }
+
+input, textarea, select { font-family: var(--font-body); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
